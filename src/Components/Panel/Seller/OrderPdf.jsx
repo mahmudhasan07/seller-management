@@ -65,7 +65,7 @@ const OrderPdf = () => {
                         <button onClick={() => navigate('/admin/sellreport')} className='btn'>Back</button>
                 }
             </div>
-            <div id='orderID' className='border-2 w-3/4 text-2xl text-black mx-auto p-5 space-y-4'>
+            <div id='orderID' className=' w-3/4 text-2xl text-black mx-auto p-5 space-y-4'>
                 <div id='orderInfo' className='flex justify-between'>
                     <div className=''>
                         <h1 className=''>Order ID : {data?._id}</h1>

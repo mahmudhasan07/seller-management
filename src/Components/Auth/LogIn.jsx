@@ -10,7 +10,7 @@ const LogIn = () => {
     const [pass, setpass] = useState('password');
     const [passCondition, setpassCondition] = useState(false)
     const axiosLink = useAxios(AxiosSource)
-    const { userLogIn, role } = useContext(Context)
+    const { userLogIn, role, userLogOut } = useContext(Context)
     const navigate = useNavigate()
 
     const handlePassword = () => {
@@ -42,6 +42,11 @@ const LogIn = () => {
                             }
                             if (res.data.role == "seller") {
                                 navigate('/seller')
+                            }
+                            if(res.data.role == "none" || res.data.role == "reject"){
+                                alert('Please wait for  admin approval')
+                                userLogOut()
+
                             }
 
                         })
